@@ -189,7 +189,7 @@ async def donate(event):
 
 @bot.on(events.NewMessage(incoming=True, pattern='/donate'))                       
 async def donate(event):
-    text = "Please donate to keep this service alive. you can send any amount\n10₹, 20₹, 50₹, 100₹\n\n🔘 Payment Methods : 'aman-9298@paytm' \n For QR CODE PRESS /qr_code " 
+    text = "**Donate to keep this service alive. you can send any amount**\n10₹, 20₹, 50₹, 100₹\n\n🔘 Payment Methods : `aman-9298@paytm` \n For QR CODE PRESS /qr_code " 
     await event.reply(text)
     
     '''
