@@ -7,7 +7,7 @@ from .. import bot as Invix
 from .. import userbot, Bot
 from .. import FORCESUB as fs
 from main.plugins.pyroplug import get_msg
-from main.plugins.helpers import get_link, join, screenshot
+from main.plugins.helpers import get_link, screenshot
 
 from telethon import events
 from pyrogram.errors import FloodWait
@@ -21,7 +21,7 @@ logger = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.INFO)
 logging.getLogger("telethon").setLevel(logging.INFO)
 
-ft = f"To use this bot you've to join @{fs}./n/Also join @mr_invisible_bots"
+ft = f"JOIN @Raj02_bots & @{fs} TO USE ME.\n\nAlso join @Save_restricted_contentt"
 
 message = "Send me the message link you want to start saving from, as a reply to this message."
           
@@ -73,12 +73,6 @@ async def clone(event):
         try:
             if 't.me/' not in link:
                 await edit.edit("invalid link")
-                ind = user.index(f'{int(event.sender_id)}')
-                user.pop(int(ind))
-                return
-            if 't.me/+' in link:
-                q = await join(userbot, link)
-                await edit.edit(q)
                 ind = user.index(f'{int(event.sender_id)}')
                 user.pop(int(ind))
                 return
