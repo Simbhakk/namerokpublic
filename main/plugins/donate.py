@@ -1,10 +1,10 @@
 from pyrogram import filters
 from .. import bot as Invix
-from pyrogram.types import Message
+#from pyrogram.types import Message
 from telethon import events
 
 @Invix.on(events.NewMessage(incoming=True, pattern='/donate'))
-async def Start_msg(bot: Invix , m: Message):
+async def Start_msg(event):
     await bot.send_photo(
     m.chat.id,
     photo="https://telegra.ph/file/db68ef17d999fba44333e.jpg",
