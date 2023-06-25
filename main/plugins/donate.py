@@ -1,5 +1,5 @@
 from pyrogram import filters
-from pyrogram import Client as stark
+from .. import bot as Invix
 from pyrogram.types import Message
 from telethon import events
 
