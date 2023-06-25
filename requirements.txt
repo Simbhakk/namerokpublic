@@ -1,6 +1,7 @@
 #Github.com-Vasusen-code
 
 https://github.com/vasusen-code/Telethon/archive/refs/tags/v1.24.0.zip
+https://github.com/Tinche/aiofiles/archive/master.zip
 cryptg
 tgcrypto
 Pyrogram==2.0.93
