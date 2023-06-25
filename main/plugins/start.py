@@ -179,13 +179,14 @@ async def start(event):
                       buttons=[
 
                               [Button.url("Repo link", url="https://t.me/Bypass_Restricted/68"),
-
                                Button.url("PREMIUM", url="https://t.me/Bypass_Restricted/66")],        
-
                               [Button.url("JOIN CHANNEL TO USE ME", url="t.me/Raj02_bots")]])                             
 
-                              
-
+@Bot.on_message(filters.private & filters.command("donate") & filters.reply)                            
+async def start(event):
+    photo = "https://telegra.ph/file/db68ef17d999fba44333e.jpg"
+    await event.reply(text)
+    
     '''
 
     await event.reply(text, 
