@@ -53,7 +53,6 @@ async def check(userbot, client, link):
         except Exception as e:
             logging.info(e)
             return False, "**This bot is only for Public Restricted channel.\n Buy premium to save from private channels t.me/Bypass_Restricted/66**"
-        except Exception:"
             
 async def get_msg(userbot, client, sender, edit_id, msg_link, i, file_n):
     edit = ""
