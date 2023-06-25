@@ -11,7 +11,7 @@ from .. import AUTH
 
 from pyrogram import filters
 
-Rudraa="""Hi, sir /batch or /bulk is not free. you can see this smalll plan\nhttps://t.me/Bypass_Restricted/19"""
+Rudraa="""Hi, sir batch or bulk is not free. you can see this smalll plan\nhttps://t.me/Bypass_Restricted/19"""
 
 @Bot.on_message((filters.command("bulk") & filters.private & ~filters.user(AUTH)) | filters.command("batch") & ~filters.user(AUTH))
 
@@ -184,7 +184,7 @@ async def start(event):
 
 @bot.on(events.NewMessage(incoming=True, pattern='/qr_code'))                       
 async def donate(event):
-    photo = "https://telegra.ph/file/db68ef17d999fba44333e.png"
+    photo = "https://telegra.ph/file/db68ef17d999fba44333e.jpg"
     await event.(photo)
 
 @bot.on(events.NewMessage(incoming=True, pattern='/donate'))                       
