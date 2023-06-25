@@ -185,7 +185,7 @@ async def start(event):
 @bot.on(events.NewMessage(incoming=True, pattern='/donate'))                       
 async def donate(event):
     photo = "https://telegra.ph/file/db68ef17d999fba44333e.jpg"
-    await event.reply(text)
+    await event.reply(photo)
     
     '''
 
