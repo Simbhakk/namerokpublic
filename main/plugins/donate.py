@@ -4,8 +4,8 @@ from .. import bot as Invix
 from telethon import events
 
 @Invix.on(events.NewMessage(incoming=True, pattern='/donate'))
-async def Start_msg(event):
-    await bot.send_photo(
+async def donate(event):
+    await event.send_photo(
     m.chat.id,
     photo="https://telegra.ph/file/db68ef17d999fba44333e.jpg",
     caption = "**Hi , Donate some money to keep this service alive. 10₹, 20₹, 50₹, 100₹**.\n"
