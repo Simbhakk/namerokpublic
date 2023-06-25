@@ -44,7 +44,8 @@ async def check(userbot, client, link):
             return False, "**Invalid Link!**"
         except Exception as e:
             logging.info(e)
-            return False, "Have you joined the channel?"
+            return False, "**This bot is only for Public Restricted channel.\n Buy premium to save from private channels t.me/Bypass_Restricted/66**"
+        except Exception:"
     else:
         try:
             chat = str(link.split("/")[-2])
@@ -52,7 +53,8 @@ async def check(userbot, client, link):
             return True, None
         except Exception as e:
             logging.info(e)
-            return False, "Maybe bot is banned from the chat, or your link is invalid!"
+            return False, "**This bot is only for Public Restricted channel.\n Buy premium to save from private channels t.me/Bypass_Restricted/66**"
+        except Exception:"
             
 async def get_msg(userbot, client, sender, edit_id, msg_link, i, file_n):
     edit = ""
@@ -133,7 +135,7 @@ async def get_msg(userbot, client, sender, edit_id, msg_link, i, file_n):
                 progress=progress_for_pyrogram,
                 progress_args=(
                     client,
-                    "**DOWNLOADING:**\n**bot made by Mr. Invisible**",
+                    "**DOWNLOADING**",
                     edit,
                     time.time()
                 )
@@ -186,7 +188,7 @@ async def get_msg(userbot, client, sender, edit_id, msg_link, i, file_n):
                     progress=progress_for_pyrogram,
                     progress_args=(
                         client,
-                        '**UPLOADING:**\n**bot made by Mr. Invisible**',
+                        '**UPLOADING**',
                         upm,
                         time.time()
                     )
@@ -229,7 +231,7 @@ async def get_msg(userbot, client, sender, edit_id, msg_link, i, file_n):
                     progress=progress_for_pyrogram,
                     progress_args=(
                         client,
-                        '**UPLOADING:**\n**bot made by Mr. Invisible**',
+                        '**UPLOADING:**',
                         upm,
                         time.time()
                     )
@@ -238,7 +240,8 @@ async def get_msg(userbot, client, sender, edit_id, msg_link, i, file_n):
             await upm.delete()
             return None
         except (ChannelBanned, ChannelInvalid, ChannelPrivate, ChatIdInvalid, ChatInvalid):
-            await client.edit_message_text(sender, edit_id, "Bot is not in that channel/ group \n send the invite link so that bot can join the channel ")
+            await client.edit_message_text(sender, edit_id, "**This bot is only for Public Restricted channel.\n Buy premium to save from private channels t.me/Bypass_Restricted/66 !**"
+        except Exception:")
             return None
     else:
         edit = await client.edit_message_text(sender, edit_id, "Cloning.")
