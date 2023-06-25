@@ -11,7 +11,7 @@ from .. import AUTH
 
 from pyrogram import filters
 
-Rudraa="""Hi, sir /batch or /bulk is not free. you can see this smalll plan\nhttps://t.me/Bypass_Restricted/19"""
+Rudraa="""Hi, sir batch or bulk is not free. you can see this smalll plan\nhttps://t.me/Bypass_Restricted/19"""
 
 @Bot.on_message((filters.command("bulk") & filters.private & ~filters.user(AUTH)) | filters.command("batch") & ~filters.user(AUTH))
 
@@ -178,14 +178,20 @@ async def start(event):
 
                       buttons=[
 
-                              [Button.url("Repo link", url="https://t.me/Bypass_Restricted/68"),
-
+                              [Button.url("REPO LINK", url="https://t.me/Bypass_Restricted/68"),
                                Button.url("PREMIUM", url="https://t.me/Bypass_Restricted/66")],        
-
                               [Button.url("JOIN CHANNEL TO USE ME", url="t.me/Raj02_bots")]])                             
 
-                              
+@bot.on(events.NewMessage(incoming=True, pattern='/qr_code'))                       
+async def donate(event):
+    photo = "https://telegra.ph/file/db68ef17d999fba44333e.jpg"
+    await event.reply(photo)
 
+@bot.on(events.NewMessage(incoming=True, pattern='/donate'))                       
+async def donate(event):
+    text = "**Donate to keep this service alive. you can send any amount**\n10₹, 20₹, 50₹, 100₹\n\n🔘 Payment Methods : `aman-9298@paytm` \n For QR CODE PRESS /qr_code " 
+    await event.reply(text)
+    
     '''
 
     await event.reply(text, 
