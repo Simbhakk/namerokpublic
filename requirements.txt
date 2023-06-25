@@ -8,3 +8,5 @@ psutil
 opencv-python-headless
 python-decouple
 requests
+dnspython
+motor
