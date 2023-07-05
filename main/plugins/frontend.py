@@ -74,7 +74,8 @@ async def clone(event):
                    await edit.edit(f"Send next link after {time_remaining} seconds.")
                    return
            # Store the current time as the last message time for the user
-           last_message_time[event.sender_id] = time.time()
+            last_message_time[event.sender_id] = time.time()
+          
         if "|" in li:
             url = li
             url_parts = url.split("|")
