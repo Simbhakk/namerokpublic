@@ -71,7 +71,7 @@ async def clone(event):
                     # Calculate the time remaining until the user can send another message
                     time_remaining = int(time_limit - time_diff)
                     # Send a message to the user with the time remaining
-                    await edit.edit(f"Send next link after {time_remaining} seconds.")
+                    await edit.edit(f"Send next link after {time_remaining} seconds.\n or Buy this plan to remove time limit:- t.me/Bypass_Restricted/5")
                     return
             # Store the current time as the last message time for the user
             last_message_time[event.sender_id] = time.time()
