@@ -170,7 +170,7 @@ S = '/' + 's' + 't' + 'a' + 'r' + 't'
 
 @bot.on(events.NewMessage(incoming=True, pattern=f"{S}"))
 async def start(event):
-    text = "Hi👋 I am Save Restricted Content Bot\n\n**Send me any video or message link Only \nfrom PUBLIC RESTRICTED CHANNELS** to clone it here.\n\nMust join:- @Bypass_Restricted"
+    text = "Hi👋 I am Save Restricted Content Bot\n\n**•FOR PUBLIC CHANNELS**\n-Send direct message/videos link from channel.\n\n**•FOR PRIVATE CHANNEL/GROUP**\n-Use this bot @Save_Restricted_contentx_Bot\n\nMust join:- @Bypass_Restricted"
     #await start_srb(event, text)
     await event.reply(text, 
 
