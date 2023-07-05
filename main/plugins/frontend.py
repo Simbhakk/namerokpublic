@@ -61,6 +61,8 @@ async def clone(event):
             await event.reply(r)
             return
         edit = await event.reply("Processing!")
+        if link.startswith("http") or link.startswith("www"):
+        # Check if the user has sent a message before
         if event.sender_id in last_message_time:
             # Get the time difference between now and the last message time
             time_diff = time.time() - last_message_time[event.sender_id]
