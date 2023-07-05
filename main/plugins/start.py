@@ -6,8 +6,6 @@ from telethon import events, Button
 from pyrogram import filters,Client
 #async def start_srb(event, st):
 from .. import AUTH
-#S = '/' + 's' + 't' + 'a' + 'r' + 't'
-# ----------------> Something try new
 
 from pyrogram import filters
 
@@ -181,11 +179,6 @@ async def start(event):
                               [Button.url("REPO LINK", url="https://t.me/Bypass_Restricted/68"),
                                Button.url("PREMIUM", url="https://t.me/Bypass_Restricted/66")],        
                               [Button.url("JOIN CHANNEL TO USE ME", url="t.me/Raj02_bots")]])                             
-
-@bot.on(events.NewMessage(incoming=True, pattern='/qr_code'))                       
-async def donate(event):
-    photo = "https://telegra.ph/file/db68ef17d999fba44333e.jpg"
-    await event.reply(photo)
 
 @bot.on(events.NewMessage(incoming=True, pattern='/donate'))                       
 async def donate(event):
