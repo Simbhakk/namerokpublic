@@ -28,7 +28,9 @@ message = "Send me the message link you want to start saving from, as a reply to
 process=[]
 timer=[]
 user=[]
-
+last_message_time = {}
+# Define the time limit in seconds
+time_limit = 120
  
 
 @Invix.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
@@ -59,9 +61,18 @@ async def clone(event):
             await event.reply(r)
             return
         edit = await event.reply("Processing!")
-        if f'{int(event.sender_id)}' in user:
-            return await edit.edit("Please don't spam links, wait until ongoing process is done.")
-        user.append(f'{int(event.sender_id)}')
+        if event.sender_id in last_message_time:
+            # Get the time difference between now and the last message time
+            time_diff = time.time() - last_message_time[event.sender_id]
+            # Check if the time difference is less than the time limit
+            if time_diff < time_limit:
+                # Calculate the time remaining until the user can send another message
+                time_remaining = int(time_limit - time_diff)
+                # Send a message to the user with the time remaining
+                await edit.edit(f"Send next link after {time_remaining} seconds.")
+                return
+        # Store the current time as the last message time for the user
+        last_message_time[event.sender_id] = time.time()
         if "|" in li:
             url = li
             url_parts = url.split("|")
