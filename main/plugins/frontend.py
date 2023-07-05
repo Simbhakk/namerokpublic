@@ -61,7 +61,20 @@ async def clone(event):
             await event.reply(r)
             return
         edit = await event.reply("Processing!")
-        
+        if link.startswith("http") or link.startswith("www"):
+        # Check if the user has sent a message before
+           if event.sender_id in last_message_time:
+              # Get the time difference between now and the last message time
+              time_diff = time.time() - last_message_time[event.sender_id]
+              # Check if the time difference is less than the time limit
+              if time_diff < time_limit:
+                  # Calculate the time remaining until the user can send another message
+                  time_remaining = int(time_limit - time_diff)
+                  # Send a message to the user with the time remaining
+                  await edit.edit(f"Send next link after {time_remaining} seconds.")
+                  return
+          # Store the current time as the last message time for the user
+          last_message_time[event.sender_id] = time.time()
         if "|" in li:
             url = li
             url_parts = url.split("|")
