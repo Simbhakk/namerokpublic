@@ -21,14 +21,16 @@ logger = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.INFO)
 logging.getLogger("telethon").setLevel(logging.INFO)
 
-ft = f"JOIN @Raj02_bots & @{fs} TO USE ME.\n\nAlso join @Save_restricted_contentt"
+ft = f"JOIN MY UPDATE CHANNEL @Bypass_restricted & @{fs} TO USE ME.\n\nAlso join @Save_restricted_contentt"
 
 message = "Send me the message link you want to start saving from, as a reply to this message."
           
 process=[]
 timer=[]
 user=[]
-
+last_message_time = {}
+# Define the time limit in seconds
+time_limit = 125
  
 
 @Invix.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
@@ -59,9 +61,21 @@ async def clone(event):
             await event.reply(r)
             return
         edit = await event.reply("Processing!")
-        if f'{int(event.sender_id)}' in user:
-            return await edit.edit("Please don't spam links, wait until ongoing process is done.")
-        user.append(f'{int(event.sender_id)}')
+        if link.startswith("http") or link.startswith("www"):
+            # Check if the user has sent a message before
+            if event.sender_id in last_message_time:
+                # Get the time difference between now and the last message time
+                time_diff = time.time() - last_message_time[event.sender_id]
+                # Check if the time difference is less than the time limit
+                if time_diff < time_limit:
+                    # Calculate the time remaining until the user can send another message
+                    time_remaining = int(time_limit - time_diff)
+                    # Send a message to the user with the time remaining
+                    await edit.edit(f"Send next link after {time_remaining} seconds.")
+                    return
+            # Store the current time as the last message time for the user
+            last_message_time[event.sender_id] = time.time()
+      
         if "|" in li:
             url = li
             url_parts = url.split("|")
@@ -89,7 +103,7 @@ async def clone(event):
                 m = msg_id
                 await get_msg(userbot, Bot, event.sender_id, edit.id, link, m, file_name)
         except FloodWait as fw:
-            await Invix.send_message(event.sender_id, f'Try again after {fw.value} seconds due to floodwait from telegram.')
+            await Invix.send_message(event.sender_id, f'Try again after {fw.value} seconds due to floodwait from Telegram.\nFor Now use this:- @Save_Restricted_contentx_Bot')
             await edit.delete()
         except Exception as e:
             logging.info(e)
