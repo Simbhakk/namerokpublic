@@ -21,7 +21,7 @@ logger = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.INFO)
 logging.getLogger("telethon").setLevel(logging.INFO)
 
-ft = f"JOIN MY UPDATE CHANNEL @Bypass_restricted & @{fs} TO USE ME.\n\nAlso join @Save_restricted_contentt"
+ft = f"You have to join @{fs} & @Bypass_restricted to use me.\n\nAlso join @Save_restricted_contentt"
 
 message = "Send me the message link you want to start saving from, as a reply to this message."
           
@@ -30,7 +30,7 @@ timer=[]
 user=[]
 last_message_time = {}
 # Define the time limit in seconds
-time_limit = 125
+time_limit = 130
  
 
 @Invix.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
@@ -71,7 +71,7 @@ async def clone(event):
                     # Calculate the time remaining until the user can send another message
                     time_remaining = int(time_limit - time_diff)
                     # Send a message to the user with the time remaining
-                    await edit.edit(f"Send next link after {time_remaining} seconds.\n or Buy this plan to remove time limit:- t.me/Bypass_Restricted/5")
+                    await edit.edit(f"Send next link after {time_remaining} seconds.")
                     return
             # Store the current time as the last message time for the user
             last_message_time[event.sender_id] = time.time()
