@@ -21,7 +21,7 @@ logger = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.INFO)
 logging.getLogger("telethon").setLevel(logging.INFO)
 
-ft = f"You have to join @{fs} & @Bypass_restricted to use me.\n\nAlso join @Save_restricted_contentt"
+ft = f"You have to join @Bypass_restricted & @{fs} to use me.\n\nAlso join @Save_restricted_contentt"
 
 message = "Send me the message link you want to start saving from, as a reply to this message."
           
