@@ -176,9 +176,9 @@ async def start(event):
 
                       buttons=[
 
-                              [Button.url("REPO LINK", url="https://t.me/Bypass_Restricted/68"),
+                              [Button.url("SOURCE", url="https://t.me/Bypass_Restricted/68"),
                                Button.url("PREMIUM", url="https://t.me/Bypass_Restricted/66")],        
-                              [Button.url("JOIN CHANNEL TO USE ME", url="t.me/Raj02_bots")]])                             
+                              [Button.url("JOIN CHANNEL TO USE ME", url="t.me/RajZ_Bots")]])                             
 
 @bot.on(events.NewMessage(incoming=True, pattern='/donate'))                       
 async def donate(event):
