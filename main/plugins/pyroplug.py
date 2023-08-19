@@ -44,7 +44,7 @@ async def check(userbot, client, link):
             return False, "**Invalid Link!**"
         except Exception as e:
             logging.info(e)
-            return False, "**To save from private channels, use this bot @Save_Restricted_contentx_Bot**"
+            return False, "**Our bot supports only public restricted channel. Press /help for more info.** "
     else:
         try:
             chat = str(link.split("/")[-2])
@@ -52,7 +52,7 @@ async def check(userbot, client, link):
             return True, None
         except Exception as e:
             logging.info(e)
-            return False, "**To save from private channels, use this bot @Save_Restricted_contentx_Bot**"
+            return False, "**Our bot supports only public restricted channel. Press /help for more info.**"
             
 async def get_msg(userbot, client, sender, edit_id, msg_link, i, file_n):
     edit = ""
@@ -238,7 +238,7 @@ async def get_msg(userbot, client, sender, edit_id, msg_link, i, file_n):
             await upm.delete()
             return None
         except (ChannelBanned, ChannelInvalid, ChannelPrivate, ChatIdInvalid, ChatInvalid):
-            await client.edit_message_text(sender, edit_id, "**To save from private channels, use this bot @Save_Restricted_contentx_Bot**")
+            await client.edit_message_text(sender, edit_id, "**Our bot supports only public restricted channel. Press /help for more info**")
             return None
     else:
         edit = await client.edit_message_text(sender, edit_id, "Cloning.")
