@@ -187,7 +187,7 @@ async def donate(event):
     
 @bot.on(events.NewMessage(incoming=True, pattern='/help'))                       
 async def donate(event):
-    text = "**Our bot supports only Public restricted channel**.\n\nIt does not support private channel/group and public group" 
+    text = "**Our bot supports only Public restricted channel**.\n\nIt does not support private channel/group and public group. Soon, A bot will be available for private download." 
     await event.reply(text)    
     
     '''
