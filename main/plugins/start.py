@@ -170,7 +170,7 @@ S = '/' + 's' + 't' + 'a' + 'r' + 't'
 
 @bot.on(events.NewMessage(incoming=True, pattern=f"{S}"))
 async def start(event):
-    text = "Hi👋 I am Save Restricted Content Bot\n\n**•FOR PUBLIC CHANNELS**\n-Send direct message/videos link from channel.\n\n**•FOR PRIVATE CHANNEL/GROUP**\n-Use this bot @Save_Restricted_contentx_Bot\n\nMust join:- @Bypass_Restricted"
+    text = "Hi👋 I am Save Restricted Content Bot\n\n**•FOR PUBLIC CHANNELS**\n-Send direct message/video link from Channel.\n\n**•NOTE:- OUR BOT DOESN'T SUPPORT PRIVATE CHANNEL/GROUP**\n\nJoin for update:- @Bypass_Restricted"
     #await start_srb(event, text)
     await event.reply(text, 
 
@@ -178,12 +178,17 @@ async def start(event):
 
                               [Button.url("SOURCE", url="https://t.me/Bypass_Restricted/68"),
                                Button.url("PREMIUM", url="https://t.me/Bypass_Restricted/66")],        
-                              [Button.url("JOIN CHANNEL TO USE ME", url="t.me/RajZ_Bots")]])                             
+                              [Button.url("JOIN UPDATE CHANNEL", url="t.me/RajZ_Bots")]])                             
 
 @bot.on(events.NewMessage(incoming=True, pattern='/donate'))                       
 async def donate(event):
     text = "**Donate to keep this service alive. you can send any amount**\n10₹, 20₹, 50₹, 100₹\n\n🔘 Payment Methods : `aman-9298@paytm` \n For QR CODE PRESS /qr_code " 
     await event.reply(text)
+    
+@bot.on(events.NewMessage(incoming=True, pattern='/help'))                       
+async def donate(event):
+    text = "**Our bot supports only Public restricted channel**.\n\nIt does not support private channel/group and public group" 
+    await event.reply(text)    
     
     '''
 
