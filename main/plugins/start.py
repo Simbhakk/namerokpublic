@@ -170,7 +170,7 @@ S = '/' + 's' + 't' + 'a' + 'r' + 't'
 
 @bot.on(events.NewMessage(incoming=True, pattern=f"{S}"))
 async def start(event):
-    text = "Hi👋 I am Save Restricted Content Bot\n\n**•FOR PUBLIC CHANNELS**\n-Send direct message/video link from Channel.\n\n**•NOTE:-** Our bot does not support \nPRIVATE CHANNEL/GROUP.\n\nJoin for update:- @Bypass_Restricted"
+    text = "Hi👋 I am Save Restricted Content Bot\n\n**•FROM PUBLIC CHANNELS**\n-Send direct message/video link to clone it here.\n\n`🚨NOTE:-` Our bot does not support \nPRIVATE CHANNEL/GROUP.\n\nJoin for update:- @Bypass_Restricted"
     #await start_srb(event, text)
     await event.reply(text, 
 
@@ -187,7 +187,7 @@ async def donate(event):
     
 @bot.on(events.NewMessage(incoming=True, pattern='/help'))                       
 async def donate(event):
-    text = "**Our bot supports only Public restricted channel**.\n\nIt does not support private channel/group and public group. Soon, A bot will be available for private download." 
+    text = "**Our bot supports only Public restricted channel**.\n\nIt does not support private channel/group and public group. Soon, A bot will be available for private download also." 
     await event.reply(text)    
     
     '''
