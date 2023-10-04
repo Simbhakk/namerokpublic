@@ -9,7 +9,7 @@ from .. import AUTH
 
 from pyrogram import filters
 
-Rudraa="""Hi, sir batch or bulk is not free. you can see this smalll plan\nhttps://t.me/Bypass_Restricted/19"""
+Rudraa="""Hi, sir batch or bulk is not free. you can see this smalll plan\nhttps://t.me/Save_Restricted_contentz/19"""
 
 @Bot.on_message((filters.command("bulk") & filters.private & ~filters.user(AUTH)) | filters.command("batch") & ~filters.user(AUTH))
 
