@@ -30,7 +30,7 @@ timer=[]
 user=[]
 last_message_time = {}
 # Define the time limit in seconds
-time_limit = 130
+time_limit = 00
  
 
 @Invix.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
