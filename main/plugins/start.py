@@ -9,7 +9,7 @@ from .. import AUTH
 
 from pyrogram import filters
 
-Rudraa="""Hi, sir batch or bulk is not free. you can see this smalll plan\nhttps://t.me/Save_Restricted_contentz/19"""
+Rudraa="""Hi, sir batch or bulk is not free. you can see this smalll plan\nhttps://t.me/Save_Restricted_contentz/11"""
 
 @Bot.on_message((filters.command("bulk") & filters.private & ~filters.user(AUTH)) | filters.command("batch") & ~filters.user(AUTH))
 
@@ -176,13 +176,13 @@ async def start(event):
 
                       buttons=[
 
-                              [Button.url("SOURCE", url="https://t.me/Save_Restricted_contentz/68"),
-                               Button.url("PREMIUM", url="https://t.me/Save_Restricted_contentz/66")],        
+                              [Button.url("SOURCE", url="https://t.me/Save_Restricted_contentz/19"),
+                               Button.url("PREMIUM", url="https://t.me/Save_Restricted_contentz/18")],        
                               [Button.url("JOIN UPDATE CHANNEL", url="t.me/RajZ_Bots")]])                             
 
 @bot.on(events.NewMessage(incoming=True, pattern='/donate'))                       
 async def donate(event):
-    text = "**Donate to keep this service alive. you can send any amount**\n10₹, 20₹, 50₹, 100₹\n\n🔘 Payment Methods : `aman-9298@paytm` \n For QR CODE PRESS /qr_code " 
+    text = "** If you got help , kindly Donate to keep this service alive. you can send any amount**\n20₹, 30₹, 50₹, 100₹\n\n🔘 Payment Methods : `aman-9298@paytm` \n aman-9298@paytm \n `aman-9298@paytm` " 
     await event.reply(text)
     
 @bot.on(events.NewMessage(incoming=True, pattern='/help'))                       
