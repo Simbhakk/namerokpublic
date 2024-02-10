@@ -238,7 +238,7 @@ async def get_msg(userbot, client, sender, edit_id, msg_link, i, file_n):
             await upm.delete()
             return None
         except (ChannelBanned, ChannelInvalid, ChannelPrivate, ChatIdInvalid, ChatInvalid):
-            await client.edit_message_text(sender, edit_id, "**Our bot supports only public restricted channel. Press /help for more info**")
+            await client.edit_message_text(sender, edit_id, "**This bot supports only public restricted channel. Press /help for more info**")
             return None
     else:
         edit = await client.edit_message_text(sender, edit_id, "Cloning.")
