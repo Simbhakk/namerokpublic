@@ -182,7 +182,7 @@ async def start(event):
 
 @bot.on(events.NewMessage(incoming=True, pattern='/donate'))                       
 async def donate(event):
-    text = "** If you got help , kindly Donate to keep this service alive. you can send any amount**\n20₹, 30₹, 50₹, 100₹\n\n🔘 Payment Methods : `aman-9298@paytm` \n aman-9298@paytm \n `aman-9298@paytm` " 
+    text = "** If this bot helped you , kindly Donate to keep this service alive. you can send any amount**\n20₹, 30₹, 50₹, 100₹\n\n🔘 Payment Methods : `aman-9298@paytm` \n aman-9298@paytm \n `aman-9298@paytm` " 
     await event.reply(text)
     
 @bot.on(events.NewMessage(incoming=True, pattern='/help'))                       
